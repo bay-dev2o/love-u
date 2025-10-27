@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat Cinta - Heartverse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="letter.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/icons/heart-icon-192.png" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="assets/icons/heart-icon-192.png">
+    <meta name="theme-color" content="#ff6b6b">
+</head>
+<body>
+    <!-- Header -->
+    <header class="page-header">
+        <button class="back-button" onclick="window.location.href='portal.html'">
+            <svg class="back-icon" viewBox="0 0 24 24">
+                <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"/>
+            </svg>
+        </button>
+        <h1 class="page-title">Surat Cinta</h1>
+        <div class="header-actions">
+            <button class="save-button">
+                <svg class="save-icon" viewBox="0 0 24 24">
+                    <path d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z"/>
+                </svg>
+            </button>
+            <button class="send-button">
+                <svg class="send-icon" viewBox="0 0 24 24">
+                    <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="letter-main">
+        <div class="letter-container">
+            <div class="letter-header">
+                <input type="text" class="letter-title" placeholder="Judul Surat Cinta" value="Surat Cinta untuk Kamu">
+                <div class="letter-meta">
+                    <div class="letter-date">Dibuat pada: <span id="current-date"></span></div>
+                </div>
+            </div>
+            
+            <div class="letter-editor-container">
+                <div class="letter-editor-toolbar">
+                    <button class="toolbar-button bold-button" title="Tebal">
+                        <svg class="toolbar-icon" viewBox="0 0 24 24">
+                            <path d="M15.6,10.79C16.57,10.11 17.25,9.02 17.25,8C17.25,5.74 15.5,4 13.25,4H7V18H14.04C16.14,18 17.75,16.3 17.75,14.21C17.75,12.69 16.89,11.39 15.6,10.79M11,6H13.25C14.34,6 15.25,6.67 15.25,8C15.25,9.33 14.34,10 13.25,10H11V6M13.04,16H11V12H13.04C14.14,12 15.04,12.67 15.04,14C15.04,15.33 14.14,16 13.04,16Z"/>
+                        </svg>
+                    </button>
+                    <button class="toolbar-button italic-button" title="Miring">
+                        <svg class="toolbar-icon" viewBox="0 0 24 24">
+                            <path d="M10,4V7H12.21L8.79,15H6V18H14V15H11.79L15.21,7H18V4H10Z"/>
+                        </svg>
+                    </button>
+                    <button class="toolbar-button underline-button" title="Garis Bawah">
+                        <svg class="toolbar-icon" viewBox="0 0 24 24">
+                            <path d="M5,21H19V19H5V21M12,17A6,6 0 0,0 18,11V3H15.5V11A3.5,3.5 0 0,1 12,14.5A3.5,3.5 0 0,1 8.5,11V3H6V11A6,6 0 0,0 12,17Z"/>
+                        </svg>
+                    </button>
+                    <div class="toolbar-divider"></div>
+                    <button class="toolbar-button heart-button" title="Tambahkan Hati">
+                        <svg class="toolbar-icon" viewBox="0 0 24 24">
+                            <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.28 2,8.5C2,5.42 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.09C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.42 22,8.5C22,12.28 18.6,15.36 13.45,20.03L12,21.35Z"/>
+                        </svg>
+                    </button>
+                    <button class="toolbar-button flower-button" title="Tambahkan Bunga">
+                        <svg class="toolbar-icon" viewBox="0 0 24 24">
+                            <path d="M12,19.5C8,19.5 5.5,17 5.5,13C5.5,9 8,6.5 12,6.5C16,6.5 18.5,9 18.5,13C18.5,17 16,19.5 12,19.5M12,2A11,11 0 0,0 1,13C1,19 6,24 12,24C18,24 23,19 23,13C23,7 18,2 12,2M12,8C9.79,8 8,9.79 8,12C8,14.21 9.79,16 12,16C14.21,16 16,14.21 16,12C16,9.79 14.21,8 12,8Z"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="letter-editor" id="letter-editor" contenteditable="true">
+                    <p>Hai Sayang,</p>
+                    <p>Aku menulis surat ini dengan penuh cinta untukmu. Setiap detik bersamamu adalah anugerah yang tak ternilai harganya.</p>
+                    <p>Ketika aku memandang matamu, aku melihat seluruh alam semesta. Senyummu mampu menghangatkan hatiku bahkan di hari yang paling dingin sekalipun.</p>
+                    <p>Aku bersyukur Tuhan mempertemukan kita. Kau adalah jawaban dari doa-doaku, kau adalah cinta sejatiku.</p>
+                    <p>Dengan sepenuh hati, aku mencintaimu sekarang dan selamanya.</p>
+                    <p class="signature">Dengan Cinta,<br>Nama Kamu</p>
+                </div>
+            </div>
+            
+            <div class="letter-actions">
+                <button class="action-button preview-button">
+                    <svg class="action-icon" viewBox="0 0 24 24">
+                        <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17C9.24,17 7,14.76 7,12C7,9.24 9.24,7 12,7C14.76,7 17,9.24 17,12C17,14.76 14.76,17 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/>
+                    </svg>
+                    <span>Pratinjau</span>
+                </button>
+                <button class="action-button share-button">
+                    <svg class="action-icon" viewBox="0 0 24 24">
+                        <path d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L15.96,7.19C16.5,7.69 17.21,8 18,8A3,3 0 0,0 21,5A3,3 0 0,0 18,2A3,3 0 0,0 15,5C15,5.24 15.04,5.47 15.09,5.7L8.04,9.81C7.5,9.31 6.79,9 6,9A3,3 0 0,0 3,12A3,3 0 0,0 6,15C6.79,15 7.5,14.69 8.04,14.19L15.16,18.34C15.11,18.55 15.08,18.77 15.08,19C15.08,20.61 16.39,21.91 18,21.91C19.61,21.91 20.92,20.61 20.92,19A2.92,2.92 0 0,0 18,16.08Z"/>
+                    </svg>
+                    <span>Bagikan</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Preview Modal -->
+        <div class="preview-modal hidden" id="preview-modal">
+            <div class="preview-content">
+                <div class="preview-header">
+                    <h2>Pratinjau Surat</h2>
+                    <button class="close-preview">
+                        <svg class="close-icon" viewBox="0 0 24 24">
+                            <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="preview-letter" id="preview-letter"></div>
+                <div class="preview-actions">
+                    <button class="action-button print-button">
+                        <svg class="action-icon" viewBox="0 0 24 24">
+                            <path d="M18,3H6V7H18M19,12A1,1 0 0,1 18,11A1,1 0 0,1 19,10A1,1 0 0,1 20,11A1,1 0 0,1 19,12M16,19H8V14H16M19,8H5A3,3 0 0,0 2,11V17H6V21H18V17H22V11A3,3 0 0,0 19,8Z"/>
+                        </svg>
+                        <span>Cetak</span>
+                    </button>
+                    <button class="action-button whatsapp-button">
+                        <svg class="action-icon" viewBox="0 0 24 24">
+                            <path d="M17.472,2.5L19.5,4.528L11.75,12.25L19.5,20L17.472,21.5L9.75,13.75L2,21.5L3.5,19.5L11.25,11.75L3.5,4.5L5.5,2.5L11.75,8.75L17.472,2.5M17.472,2.5L11.75,8.75L5.5,2.5L3.5,4.5L11.75,11.75L9.75,13.75L2,21.5L3.5,19.5L11.25,11.75L19.5,20L17.472,21.5L11.75,13.75L17.472,2.5Z"/>
+                        </svg>
+                        <span>Kirim via WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="letter.js"></script>
+</body>
+</html>

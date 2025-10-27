@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taman Cinta - Heartverse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="garden.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/icons/heart-icon-192.png" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="assets/icons/heart-icon-192.png">
+    <meta name="theme-color" content="#ff6b6b">
+</head>
+<body>
+    <!-- Header -->
+    <header class="page-header">
+        <button class="back-button" onclick="window.location.href='portal.html'">
+            <svg class="back-icon" viewBox="0 0 24 24">
+                <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"/>
+            </svg>
+        </button>
+        <h1 class="page-title">Taman Cinta</h1>
+        <div class="header-actions">
+            <button class="lock-button">
+                <svg class="lock-icon" viewBox="0 0 24 24">
+                    <path d="M12,17C10.89,17 10,16.1 10,15C10,13.89 10.89,13 12,13A2,2 0 0,1 14,15A2,2 0 0,1 12,17M18,20V10H6V20H18M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V10C4,8.89 4.89,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z"/>
+                </svg>
+            </button>
+            <button class="person-button">
+                <svg class="person-icon" viewBox="0 0 24 24">
+                    <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                </svg>
+            </button>
+            <button class="season-button">
+                <svg class="season-icon" viewBox="0 0 24 24">
+                    <path d="M12,18A6,6 0 0,1 6,12C6,11.4 6.1,10.8 6.3,10.3L4.93,8.9C4.3,9.8 4,10.8 4,12C4,16.4 7.6,20 12,20C16.4,20 20,16.4 20,12C20,7.6 16.4,4 12,4C10.8,4 9.8,4.3 8.9,4.9L10.3,6.3C10.8,6.1 11.4,6 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18Z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="garden-main">
+        <div class="garden-header">
+            <h2 class="garden-title">Taman Cinta Abadi</h2>
+            <p class="garden-subtitle">Tanam kenangan indah bersama</p>
+            <div class="garden-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="plant-count">0</span>
+                    <span class="stat-label">Tanaman</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="memory-count">0</span>
+                    <span class="stat-label">Kenangan</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="season-display">Spring</span>
+                    <span class="stat-label">Musim</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="garden-container">
+            <canvas id="garden-canvas" class="garden-canvas"></canvas>
+            
+            <!-- Interactive Objects Overlay -->
+            <div class="garden-overlay">
+                <!-- Flowers -->
+                <div class="interactive-object flower-1" data-type="flower" data-id="1">
+                    <svg class="object-icon" viewBox="0 0 24 24">
+                        <path d="M12,19.5C8,19.5 5.5,17 5.5,13C5.5,9 8,6.5 12,6.5C16,6.5 18.5,9 18.5,13C18.5,17 16,19.5 12,19.5M12,2A11,11 0 0,0 1,13C1,19 6,24 12,24C18,24 23,19 23,13C23,7 18,2 12,2M12,8C9.79,8 8,9.79 8,12C8,14.21 9.79,16 12,16C14.21,16 16,14.21 16,12C16,9.79 14.21,8 12,8Z"/>
+                    </svg>
+                </div>
+                
+                <div class="interactive-object flower-2" data-type="flower" data-id="2">
+                    <svg class="object-icon" viewBox="0 0 24 24">
+                        <path d="M12,19.5C8,19.5 5.5,17 5.5,13C5.5,9 8,6.5 12,6.5C16,6.5 18.5,9 18.5,13C18.5,17 16,19.5 12,19.5M12,2A11,11 0 0,0 1,13C1,19 6,24 12,24C18,24 23,19 23,13C23,7 18,2 12,2M12,8C9.79,8 8,9.79 8,12C8,14.21 9.79,16 12,16C14.21,16 16,14.21 16,12C16,9.79 14.21,8 12,8Z"/>
+                    </svg>
+                </div>
+                
+                <!-- Trees -->
+                <div class="interactive-object tree-1" data-type="tree" data-id="1">
+                    <svg class="object-icon" viewBox="0 0 24 24">
+                        <path d="M12,2L14.39,5.42C13.65,5.15 12.84,5 12,5C11.16,5 10.35,5.15 9.61,5.42L12,2M3.34,7L7.5,6.65C6.9,7.16 6.36,7.78 5.94,8.5C5.5,9.24 5.25,10 5.11,10.79L3.34,7M20.65,7L18.88,10.79C18.74,10 18.47,9.23 18.05,8.5C17.63,7.78 17.1,7.15 16.5,6.64L20.65,7M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10M17.5,12C17.5,10.85 17.25,9.75 16.8,8.75C17.63,9.24 18.37,9.9 18.94,10.71C19.5,11.5 19.75,12.38 19.75,13.25C19.75,14.5 19.25,15.6 18.4,16.5C17.6,17.4 16.5,18 15.25,18.25C14.4,18.4 13.5,18.5 12.5,18.5C11.5,18.5 10.6,18.4 9.75,18.25C8.5,18 7.4,17.4 6.6,16.5C5.75,15.6 5.25,14.5 5.25,13.25C5.25,12.38 5.5,11.5 6.06,10.71C6.63,9.9 7.37,9.24 8.2,8.75C7.75,9.75 7.5,10.85 7.5,12C7.5,14.5 9,16.5 12,16.5C15,16.5 16.5,14.5 16.5,12H17.5Z"/>
+                    </svg>
+                </div>
+                
+                <!-- Hearts -->
+                <div class="interactive-object heart-1" data-type="heart" data-id="1">
+                    <svg class="object-icon" viewBox="0 0 24 24">
+                        <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.28 2,8.5C2,5.42 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.09C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.42 22,8.5C22,12.28 18.6,15.36 13.45,20.03L12,21.35Z"/>
+                    </svg>
+                </div>
+                
+                <!-- Additional Interactive Objects -->
+                <div class="interactive-object butterfly-1" data-type="butterfly" data-id="1">
+                    <svg class="object-icon" viewBox="0 0 24 24">
+                        <path d="M12,4C14.21,4 16,5.79 16,8C16,10.21 14.21,12 12,12C9.79,12 8,10.21 8,8C8,5.79 9.79,4 12,4M12,6C10.9,6 10,6.9 10,8C10,9.1 10.9,10 12,10C13.1,10 14,9.1 14,8C14,6.9 13.1,6 12,6M12,14C14.67,14 20,15.33 20,18V20H4V18C4,15.33 9.33,14 12,14M12,15C10.05,15 6.5,15.78 6.5,17H17.5C17.5,15.78 13.95,15 12,15Z"/>
+                    </svg>
+                </div>
+                
+                <div class="interactive-object bird-1" data-type="bird" data-id="1">
+                    <svg class="object-icon" viewBox="0 0 24 24">
+                        <path d="M12,17C10.89,17 10,16.1 10,15C10,13.89 10.89,13 12,13A2,2 0 0,1 14,15A2,2 0 0,1 12,17M18,20V10H6V20H18M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V10C4,8.89 4.89,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quote Display -->
+        <div id="quote-display" class="quote-display hidden">
+            <div class="quote-content">
+                <p class="quote-text"></p>
+                <button class="close-quote" id="close-quote">
+                    <svg class="close-icon" viewBox="0 0 24 24">
+                        <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Audio Bite Player -->
+        <div id="audio-player" class="audio-player hidden">
+            <div class="player-content">
+                <div class="player-controls">
+                    <button id="play-pause" class="play-pause">
+                        <svg class="play-icon" viewBox="0 0 24 24">
+                            <path d="M8,5.14V19.14L19,12.14L8,5.14Z"/>
+                        </svg>
+                    </button>
+                    <div class="progress-container">
+                        <div id="progress-bar" class="progress-bar">
+                            <div id="progress-fill" class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <button id="close-audio" class="close-audio">
+                        <svg class="close-icon" viewBox="0 0 24 24">
+                            <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Touch Trail Effect Container -->
+    <div id="touch-trail-container"></div>
+
+    <script src="garden.js"></script>
+</body>
+</html>

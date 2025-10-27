@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ff6b6b">
+    <title>Pengaturan - Heartverse</title>
+    <meta name="description" content="Sesuaikan pengalaman Heartverse Anda dengan tema, preferensi audio, dan integrasi WhatsApp">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Icons -->
+    <link rel="icon" href="assets/icons/heart-icon-192.png" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="assets/icons/heart-icon-192.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="settings.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/lagu/H1.mp3" as="audio">
+</head>
+<body>
+    <!-- Header with Back Button -->
+    <header class="page-header">
+        <button id="back-button" class="back-button">
+            <svg viewBox="0 0 24 24" class="back-icon">
+                <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"/>
+            </svg>
+        </button>
+        <h1 class="page-title">Pengaturan</h1>
+        <div class="header-actions">
+            <button id="save-button" class="save-button">
+                <svg viewBox="0 0 24 24" class="save-icon">
+                    <path d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="settings-main">
+        <!-- Theme Settings -->
+        <div class="settings-section">
+            <h2>Tema</h2>
+            <div class="theme-options">
+                <div class="theme-option" data-theme="morning">
+                    <div class="theme-preview morning-preview">
+                        <div class="preview-heart"></div>
+                    </div>
+                    <span>Pagi</span>
+                </div>
+                <div class="theme-option" data-theme="sunset">
+                    <div class="theme-preview sunset-preview">
+                        <div class="preview-heart"></div>
+                    </div>
+                    <span>Senja</span>
+                </div>
+                <div class="theme-option" data-theme="midnight">
+                    <div class="theme-preview midnight-preview">
+                        <div class="preview-heart"></div>
+                    </div>
+                    <span>Malammu</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Motion Settings -->
+        <div class="settings-section">
+            <h2>Gerakan & Animasi</h2>
+            <div class="setting-item">
+                <div class="setting-info">
+                    <span class="setting-label">Aktifkan Animasi</span>
+                    <span class="setting-description">Aktifkan atau nonaktifkan animasi di seluruh aplikasi</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="animations-toggle" class="toggle-input">
+                    <label for="animations-toggle" class="toggle-label"></label>
+                </div>
+            </div>
+            
+            <div class="setting-item">
+                <div class="setting-info">
+                    <span class="setting-label">Jejak Sentuh</span>
+                    <span class="setting-description">Tampilkan efek jejak saat menyentuh layar</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="touch-trail-toggle" class="toggle-input">
+                    <label for="touch-trail-toggle" class="toggle-label"></label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audio Settings -->
+        <div class="settings-section">
+            <h2>Audio</h2>
+            <div class="setting-item">
+                <div class="setting-info">
+                    <span class="setting-label">Volume Master</span>
+                    <span class="setting-description">Atur volume keseluruhan aplikasi</span>
+                </div>
+                <div class="volume-control">
+                    <input type="range" id="master-volume" class="volume-slider" min="0" max="100" value="80">
+                </div>
+            </div>
+            
+            <div class="setting-item">
+                <div class="setting-info">
+                    <span class="setting-label">Efek Suara</span>
+                    <span class="setting-description">Aktifkan atau nonaktifkan efek suara</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="sound-effects-toggle" class="toggle-input">
+                    <label for="sound-effects-toggle" class="toggle-label"></label>
+                </div>
+            </div>
+        </div>
+
+        <!-- WhatsApp Integration -->
+        <div class="settings-section">
+            <h2>Integrasi WhatsApp</h2>
+            <div class="setting-item">
+                <div class="setting-info">
+                    <span class="setting-label">Kirim ke WhatsApp</span>
+                    <span class="setting-description">Aktifkan pengiriman pesan langsung ke WhatsApp</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="whatsapp-toggle" class="toggle-input">
+                    <label for="whatsapp-toggle" class="toggle-label"></label>
+                </div>
+            </div>
+            
+            <div class="setting-item">
+                <div class="setting-info">
+                    <span class="setting-label">Nomor WhatsApp</span>
+                    <span class="setting-description">Masukkan nomor untuk pengiriman langsung (opsional)</span>
+                </div>
+                <div class="input-container">
+                    <input type="tel" id="whatsapp-number" class="text-input" placeholder="6281234567890">
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Management -->
+        <div class="settings-section">
+            <h2>Manajemen Data</h2>
+            <div class="setting-item">
+                <div class="setting-info">
+                    <span class="setting-label">Ekspor Data</span>
+                    <span class="setting-description">Simpan salinan data Anda ke file</span>
+                </div>
+                <button id="export-data-button" class="action-button">
+                    Ekspor
+                </button>
+            </div>
+            
+            <div class="setting-item">
+                <div class="setting-info">
+                    <span class="setting-label">Impor Data</span>
+                    <span class="setting-description">Pulihkan data dari file yang diekspor</span>
+                </div>
+                <button id="import-data-button" class="action-button">
+                    Impor
+                </button>
+            </div>
+            
+            <div class="setting-item danger">
+                <div class="setting-info">
+                    <span class="setting-label">Hapus Semua Data</span>
+                    <span class="setting-description">Hapus semua data aplikasi secara permanen</span>
+                </div>
+                <button id="clear-data-button" class="action-button danger">
+                    Hapus
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Touch Trail Effect Container -->
+    <div id="touch-trail-container"></div>
+
+    <!-- Scripts -->
+    <script src="settings.js"></script>
+    <script>
+        // Register service worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registered'))
+                    .catch(error => console.log('SW registration failed'));
+            });
+        }
+    </script>
+</body>
+</html>

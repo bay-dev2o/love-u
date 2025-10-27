@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartverse - Dunia Cinta yang Magis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/icons/heart-icon-192.png" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="assets/icons/heart-icon-192.png">
+    <meta name="theme-color" content="#ff6b6b">
+</head>
+<body>
+    <div class="welcome-container">
+        <div class="heart-animation">
+            <div class="heart"></div>
+        </div>
+        <h1 class="app-title">Heartverse</h1>
+        <p class="app-subtitle">Dunia Cinta yang Magis</p>
+        <button id="enter-button" class="enter-button">Masuk ke Dunia Cinta</button>
+        <div class="loading-text">Mempersiapkan pengalaman cinta yang luar biasa...</div>
+    </div>
+
+    <script>
+        // Redirect to portal after 3 seconds or when button is clicked
+        setTimeout(() => {
+            window.location.href = 'portal.html';
+        }, 3000);
+
+        document.getElementById('enter-button').addEventListener('click', () => {
+            window.location.href = 'portal.html';
+        });
+    </script>
+</body>
+</html>

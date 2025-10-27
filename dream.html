@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langit Mimpi - Heartverse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dream.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/icons/heart-icon-192.png" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="assets/icons/heart-icon-192.png">
+    <meta name="theme-color" content="#ff6b6b">
+</head>
+<body>
+    <!-- Header -->
+    <header class="page-header">
+        <button class="back-button" onclick="window.location.href='portal.html'">
+            <svg class="back-icon" viewBox="0 0 24 24">
+                <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"/>
+            </svg>
+        </button>
+        <h1 class="page-title">Langit Mimpi</h1>
+        <div class="header-actions">
+            <button class="save-button">
+                <svg class="save-icon" viewBox="0 0 24 24">
+                    <path d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dream-main">
+        <!-- Dream Header -->
+        <div class="dream-header animate-fadeIn" style="animation-delay: 0.1s">
+            <h2 class="dream-title">Langit Mimpi Abadi</h2>
+            <p class="dream-subtitle">Wujudkan harapanmu menjadi rasi bintang</p>
+            <div class="dream-stats">
+                <div class="stat-item animate-fadeIn" style="animation-delay: 0.2s">
+                    <span class="stat-number" id="wish-count">0</span>
+                    <span class="stat-label">Harapan</span>
+                </div>
+                <div class="stat-item animate-fadeIn" style="animation-delay: 0.3s">
+                    <span class="stat-number" id="constellation-count">0</span>
+                    <span class="stat-label">Rasi Bintang</span>
+                </div>
+                <div class="stat-item animate-fadeIn" style="animation-delay: 0.4s">
+                    <span class="stat-number" id="star-count">0</span>
+                    <span class="stat-label">Bintang</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dream Canvas -->
+        <div class="dream-canvas-container">
+            <canvas id="dream-canvas" class="dream-canvas"></canvas>
+            <div class="canvas-overlay">
+                <button class="clear-button" id="clear-button">
+                    <svg class="clear-icon" viewBox="0 0 24 24">
+                        <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                    </svg>
+                    Bersihkan
+                </button>
+            </div>
+        </div>
+
+        <!-- Wish Form -->
+        <div class="wish-form-container animate-fadeIn" style="animation-delay: 0.5s">
+            <h3 class="form-title">Tulis Harapanmu</h3>
+            <div class="wish-form">
+                <textarea id="wish-input" class="wish-input" placeholder="Tulis harapan indahmu di sini..."></textarea>
+                <button id="add-wish-button" class="add-wish-button animate-pulse">
+                    <svg class="add-icon" viewBox="0 0 24 24">
+                        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/>
+                    </svg>
+                    Tambahkan ke Langit
+                </button>
+            </div>
+        </div>
+
+        <!-- Constellation Builder -->
+        <div class="constellation-builder animate-fadeIn" style="animation-delay: 0.6s">
+            <h3 class="builder-title">Buat Rasi Bintang</h3>
+            <div class="builder-controls">
+                <button class="control-button animate-float" style="animation-delay: 0.7s" id="draw-mode">
+                    <svg class="control-icon" viewBox="0 0 24 24">
+                        <path d="M12,2L14.39,5.42C13.65,5.15 12.84,5 12,5C11.16,5 10.35,5.15 9.61,5.42L12,2M3.34,7L7.5,6.65C6.9,7.16 6.36,7.78 5.94,8.5C5.5,9.24 5.25,10 5.11,10.79L3.34,7M20.65,7L18.88,10.79C18.74,10 18.47,9.23 18.05,8.5C17.63,7.78 17.1,7.15 16.5,6.64L20.65,7M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10M17.5,12C17.5,10.85 17.25,9.75 16.8,8.75C17.63,9.24 18.37,9.9 18.94,10.71C19.5,11.5 19.75,12.38 19.75,13.25C19.75,14.5 19.25,15.6 18.4,16.5C17.6,17.4 16.5,18 15.25,18.25C14.4,18.4 13.5,18.5 12.5,18.5C11.5,18.5 10.6,18.4 9.75,18.25C8.5,18 7.4,17.4 6.6,16.5C5.75,15.6 5.25,14.5 5.25,13.25C5.25,12.38 5.5,11.5 6.06,10.71C6.63,9.9 7.37,9.24 8.2,8.75C7.75,9.75 7.5,10.85 7.5,12C7.5,14.5 9,16.5 12,16.5C15,16.5 16.5,14.5 16.5,12H17.5Z"/>
+                    </svg>
+                    Gambar
+                </button>
+                <button class="control-button animate-float" style="animation-delay: 0.8s" id="connect-mode">
+                    <svg class="control-icon" viewBox="0 0 24 24">
+                        <path d="M14,12L10,8V11H2V13H10V16L14,12M22,11V13H17V16L13,12L17,8V11H22Z"/>
+                    </svg>
+                    Hubungkan
+                </button>
+                <button class="control-button animate-float" style="animation-delay: 0.9s" id="erase-mode">
+                    <svg class="control-icon" viewBox="0 0 24 24">
+                        <path d="M16.24,3.56L21.19,8.5C21.97,9.29 21.97,10.55 21.19,11.34L12,20.53C10.44,22.09 7.91,22.09 6.34,20.53L2.81,17C2.03,16.21 2.03,14.95 2.81,14.16L13.41,3.56C14.2,2.78 15.46,2.78 16.24,3.56M4.22,15.58L7.76,19.11C8.54,19.9 9.8,19.9 10.59,19.11L14.12,15.58L9.17,10.63L4.22,15.58Z"/>
+                    </svg>
+                    Hapus
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="dream.js"></script>
+</body>
+</html>
